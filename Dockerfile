@@ -1,4 +1,4 @@
-FROM golang:1.24 AS builder
+FROM golang:1.24.3 AS builder
 
 ARG CGO_ENABLED=0
 WORKDIR /app
