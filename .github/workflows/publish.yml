@@ -1,13 +1,8 @@
 name: Publish Docker Image to Github Packages
 
-#on:
-#  release:
-#    types: [published]
-
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [published]
 
 env:
   REGISTRY: ghcr.io
@@ -32,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/${{ github.repository }}/mini-storage:latest
+          tags: ghcr.io/${{ github.repository }}:latest
